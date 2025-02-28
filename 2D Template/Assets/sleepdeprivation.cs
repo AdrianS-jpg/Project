@@ -4,6 +4,7 @@ using UnityEngine;
 public class sleepdeprivation : MonoBehaviour
 {
     public int cardType;
+    //public GameObject gameObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,11 +22,12 @@ public class sleepdeprivation : MonoBehaviour
 
     public void play()
     {
-
+        Destroy(gameObject);
     }
 
     private void OnMouseDown()
     {
-        
+        maingameplayScript.selectedCard = gameObject;
+        Debug.Log(cardType);
     }
 }

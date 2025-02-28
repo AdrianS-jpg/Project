@@ -29,6 +29,7 @@ public class Strt : MonoBehaviour
     public static List<string> options = new List<string>();
     public static int numberinList = 0;
     public static int numberOfLayer = 0;
+    public static int placeNumber = 0;
     public GameObject prefab;
     public GameObject prefab2;
     public Transform transform;
@@ -41,7 +42,6 @@ public class Strt : MonoBehaviour
             room = room + "[";
             layers = Random.Range(1, 3);
             room = room + layers.ToString();
-            room = room + "]";
             for (int j = 1; j <= layers; j++)
             {
                 option = Random.Range(1, 4);
@@ -54,12 +54,15 @@ public class Strt : MonoBehaviour
                 }
                 roomlist = new List<string>() {"g", "t", "b", "u"};
             }
+            options.Add("e");
         }
         Debug.Log(room);
-        for (int i = 0; i < int.Parse(room.Substring(4, 1)); i++)
+        for (int i = 0; i < int.Parse(room.Substring(3, 1)); i++)
         {
-            Instantiate(prefab, new Vector3(((-400 + ((Canvas.GetComponent<RectTransform>().rect.width / (int.Parse(room.Substring(4, 1)) + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
+            Instantiate(prefab, new Vector3(((-400 + ((Canvas.GetComponent<RectTransform>().rect.width / (int.Parse(room.Substring(3, 1)) + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
         }
+        placeNumber = placeNumber + 3 + int.Parse(room.Substring(3, 1));
+        Debug.Log(placeNumber);
     }
 
     void Update()
@@ -73,15 +76,23 @@ public class Strt : MonoBehaviour
     }
     public void startRoom()
     {
-        room = Random.Range(2, 4).ToString();
-        for (int i = 0; i <= int.Parse(room.Substring(0, 1)); i++)
+        Debug.Log(room.Substring(placeNumber + 1, 1));
+        if (room.Substring(placeNumber + 1, 1) == "[")
         {
-            room = room + Random.Range(1, 3).ToString();
-            for (int j = 0; j <= int.Parse(room.Substring(room.Length - 1, 1)); j++)
+            for (int i = 0; i < 1; i++)
             {
-                room = room + Random.Range(1, 3).ToString();
+                Instantiate(prefab, new Vector3(((-800 + ((Canvas.GetComponent<RectTransform>().rect.width / (1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
             }
+            placeNumber = placeNumber + 2;
+
+        } else {
+            Debug.Log(room);
+            for (int i = 0; i < int.Parse(room.Substring(placeNumber + 1, 1)); i++)
+            {
+                Instantiate(prefab, new Vector3(((-400 + ((Canvas.GetComponent<RectTransform>().rect.width / (int.Parse(room.Substring(placeNumber + 1, 1)) + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
+            }
+            placeNumber = placeNumber + int.Parse(room.Substring(placeNumber + 1, 1)) + 1;
         }
-        Debug.Log(room);
+        
     }
 }
