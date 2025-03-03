@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteList:
   - {fileID: 6350735431015813566, guid: 72bcf3cae55ca7a4aac8c6f0a36d4063, type: 3}
+  - {fileID: 4551600254273156241, guid: 3975173dcef8f2d47ba74fbb3222fd3a, type: 3}
+  - {fileID: -51706099312419849, guid: 255390b7e9f9dae42aaeec6df197dc44, type: 3}
+  - {fileID: -2978527850550562603, guid: 5e89b1e245effd746ba9025c3264e15e, type: 3}
+  - {fileID: -1175859334856095515, guid: 8fc0d5173b79dd045b67458d6604ca1d, type: 3}
   healthList: 03000000
   attackList: 02000000
   mainCard: {fileID: 0}

@@ -28,6 +28,14 @@ public class maingameplayScript : MonoBehaviour
         
     }
     
+    public void mained()
+    {
+        if (cardData.mainCard != null)
+        {
+            cardData.mainCard.GetComponent<sleepdeprivation>().play();
+        }
+    }
+
     public void played()
     {
         if (selectedCard != null)
