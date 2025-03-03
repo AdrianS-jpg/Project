@@ -10,6 +10,7 @@ public class maingameplayScript : MonoBehaviour
     public Transform transform;
     public GameObject Canvas;
     public GameObject prefab;
+    public cardData cardData;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +24,7 @@ public class maingameplayScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
     

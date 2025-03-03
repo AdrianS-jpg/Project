@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
+  cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
+  transform: {fileID: 237939364391572998}

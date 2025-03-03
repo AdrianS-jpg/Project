@@ -549,6 +549,7 @@ MonoBehaviour:
   transform: {fileID: 624328261}
   Canvas: {fileID: 624328257}
   prefab: {fileID: 3173905809684846205, guid: fea7f3afd9fb7fd4393122ad2c7a2474, type: 3}
+  cardData: {fileID: 0}
 --- !u!114 &731032171
 MonoBehaviour:
   m_ObjectHideFlags: 0

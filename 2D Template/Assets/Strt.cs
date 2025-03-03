@@ -18,8 +18,9 @@ public class Strt : MonoBehaviour
     //t = trade (sacrifice)
     //b = base (base card upgrade) (pernament upgrades)
     //u = upgrade (other upgrades) (upgrade hand cards)
+    //e = encounter
     [System.NonSerialized]
-    public static List<int> deck = new List<int> {0, 1, 2, 3, 4};
+    public static List<int> deck = new List<int>() {0, 1, 2, 3, 4};
     [System.NonSerialized]
     public static List<int> hand = new List<int> {};
     [System.NonSerialized]
@@ -34,6 +35,7 @@ public class Strt : MonoBehaviour
     public GameObject prefab2;
     public Transform transform;
     public GameObject Canvas;
+    public cardData cardData;
     void Start()
     {
         room = Random.Range(2, 5).ToString();
