@@ -25,7 +25,7 @@ public class Strt : MonoBehaviour
     public static List<int> hand = new List<int> {};
     [System.NonSerialized]
     public static List<int> cards = new List<int>() {0, 1, 2, 3, 4};
-    public static int handSize = 2;
+    public static int handSize = 5;
     public static int handCurrent = 0;
     public static List<string> options = new List<string>();
     public static int numberinList = 0;
@@ -61,7 +61,7 @@ public class Strt : MonoBehaviour
         Debug.Log(room);
         for (int i = 0; i < int.Parse(room.Substring(3, 1)); i++)
         {
-            Instantiate(prefab, new Vector3(((-400 + ((Canvas.GetComponent<RectTransform>().rect.width / (int.Parse(room.Substring(3, 1)) + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
+            Instantiate(prefab, new Vector3((((Canvas.GetComponent<RectTransform>().rect.width / 2) - ((Canvas.GetComponent<RectTransform>().rect.width / (int.Parse(room.Substring(3, 1)) + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), 0, 0), Quaternion.identity, transform);
         }
         placeNumber = placeNumber + 3 + int.Parse(room.Substring(3, 1));
         Debug.Log(placeNumber);
