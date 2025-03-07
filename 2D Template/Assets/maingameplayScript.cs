@@ -32,7 +32,10 @@ public class maingameplayScript : MonoBehaviour
     {
         if (selectedCard != null)
         {
-            selectedCard.GetComponent<sleepdeprivation>().mainCard();
+            if (cardData.mainCard == null)
+            {
+                selectedCard.GetComponent<sleepdeprivation>().mainCard();
+            }
         }
     }
 

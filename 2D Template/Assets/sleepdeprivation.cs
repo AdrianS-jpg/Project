@@ -10,6 +10,7 @@ public class sleepdeprivation : MonoBehaviour
     public SpriteRenderer health;
     public SpriteRenderer attack;
     public SpriteRenderer yeller;
+    public SpriteRenderer pre;
     //public GameObject gameObject;
     //yo past adrian you stupid
 
@@ -47,6 +48,7 @@ public class sleepdeprivation : MonoBehaviour
     public void mainCard()
     {
         cardData.mainCard = gameObject;
+        
         transform.position = new Vector3(0,0,0);
     }
     public void play()
@@ -60,16 +62,35 @@ public class sleepdeprivation : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (maingameplayScript.selectedCard == gameObject)
+        if (cardData.mainCard != gameObject)
         {
-            maingameplayScript.selectedCard = null;
-        }
-        else
-        {
-            maingameplayScript.selectedCard = gameObject;
-        }
 
-        Debug.Log(cardType);
+            if (maingameplayScript.selectedCard == gameObject)
+            {
+                maingameplayScript.selectedCard = null;
+            }
+            else
+            {
+                maingameplayScript.selectedCard = gameObject;
+            }
+
+            Debug.Log(cardType);
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if (cardData.mainCard != gameObject)
+        {
+            pre.enabled = true;
+        }
+    }
+    private void OnMouseExit()
+    {
+        if (cardData.mainCard != gameObject)
+        {
+            pre.enabled = false;
+        }
     }
 
     public void changeSprite(GameObject g, Sprite s)
