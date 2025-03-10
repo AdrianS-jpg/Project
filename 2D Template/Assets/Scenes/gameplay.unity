@@ -934,7 +934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 731032170}
         m_TargetAssemblyTypeName: maingameplayScript, Assembly-CSharp
-        m_MethodName: mained
+        m_MethodName: numberChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

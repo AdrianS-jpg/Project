@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f90c8d7f80753c741aa48365ecb4dbfa
+guid: a11666211ac49214fb720dfecd7867cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8921811215267831592
-    second: sprite_07_0
+      213: -5100732151447422352
+    second: card105_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_07_0
+      name: card105_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 4
         y: 0
-        width: 58
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d06dd038fb5f2480800000000000000
-      internalID: -8921811215267831592
+      spriteID: 07aff82122f8639b0800000000000000
+      internalID: -5100732151447422352
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      sprite_07_0: -8921811215267831592
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

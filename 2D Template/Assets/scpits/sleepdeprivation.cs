@@ -7,8 +7,8 @@ public class sleepdeprivation : MonoBehaviour
     public cardData cardData;
     public Transform transform;
     public SpriteRenderer card;
-    public SpriteRenderer health;
-    public SpriteRenderer attack;
+    public GameObject health;
+    public GameObject attack;
     public SpriteRenderer yeller;
     public SpriteRenderer pre;
     //public GameObject gameObject;
@@ -19,11 +19,12 @@ public class sleepdeprivation : MonoBehaviour
     {
         transform = gameObject.GetComponent<Transform>();
         cardType = Strt.deck[Random.Range(0, Strt.deck.Count - 1)];
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         Strt.deck.Remove(cardType);
         Strt.hand.Add(cardType);
         card.sprite = cardData.spriteList[cardType];
-        attack.sprite = cardData.numberList[cardData.attackList[cardType]];
-        health.sprite = cardData.numberList[cardData.healthList[cardType]];
+        attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
+        health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
         Strt.handCurrent++;
         
     }

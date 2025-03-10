@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Multiplayer.Center.Common;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class maingameplayScript : MonoBehaviour
@@ -17,7 +18,7 @@ public class maingameplayScript : MonoBehaviour
     {
         for (int i = 0; i < Strt.handSize; i++)
         {
-            Instantiate(prefab, new Vector3((((Canvas.GetComponent<RectTransform>().rect.width / 2) - ((Canvas.GetComponent<RectTransform>().rect.width / (Strt.handSize + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), -2, 0), Quaternion.identity, transform);
+            Instantiate(prefab, new Vector3((((Canvas.GetComponent<RectTransform>().rect.width / 2) - ((Canvas.GetComponent<RectTransform>().rect.width / (Strt.handSize + 1)) * (i + 1))) * Canvas.GetComponent<RectTransform>().localScale.x), -2, transform.position.z * Canvas.GetComponent<RectTransform>().localScale.z), Quaternion.identity, transform);
             Debug.Log("work");
         }
     }
@@ -45,5 +46,10 @@ public class maingameplayScript : MonoBehaviour
         {
             selectedCard.GetComponent<sleepdeprivation>().play();
         }
+    }
+
+    public void numberChange()
+    {
+        selectedCard.GetComponent<sleepdeprivation>().attack.GetComponent<numbers>().numberRun(77);
     }
 }
