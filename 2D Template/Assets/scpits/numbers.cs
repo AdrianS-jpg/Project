@@ -30,7 +30,7 @@ public class numbers : MonoBehaviour
             numbersprite1.GetComponent<Transform>().localScale = new Vector3(numbersprite1.GetComponent<Transform>().localScale.x, numbersprite1.GetComponent<Transform>().localScale.y, numbersprite1.GetComponent<Transform>().localScale.z);
             numbersprite2.GetComponent<Transform>().localScale = new Vector3(numbersprite2.GetComponent<Transform>().localScale.x, numbersprite1.GetComponent<Transform>().localScale.y, numbersprite1.GetComponent<Transform>().localScale.z);
             numbersprite1.GetComponent<Transform>().localPosition = new Vector3(numbersprite1.GetComponent<Transform>().localPosition.x + 3.25f, numbersprite1.GetComponent<Transform>().localPosition.y, numbersprite1.GetComponent<Transform>().localPosition.z);
-            numbersprite2.GetComponent<Transform>().localPosition = new Vector3(numbersprite1.GetComponent<Transform>().localPosition.x - 3.25f, numbersprite2.GetComponent<Transform>().localPosition.y, numbersprite2.GetComponent<Transform>().localPosition.z);
+            numbersprite2.GetComponent<Transform>().localPosition = new Vector3(numbersprite2.GetComponent<Transform>().localPosition.x - 3.25f, numbersprite2.GetComponent<Transform>().localPosition.y, numbersprite2.GetComponent<Transform>().localPosition.z);
 
         }
     }

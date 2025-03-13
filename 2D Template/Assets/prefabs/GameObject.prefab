@@ -396,7 +396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbersprite1: {fileID: 283693942272280705}
   numbersprite2: {fileID: 443882150769434777}
-  currentSize: {fileID: 0}
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
 --- !u!1 &3537926343024735466
 GameObject:
@@ -903,7 +902,7 @@ MonoBehaviour:
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
   transform: {fileID: 8547073815494441747}
   card: {fileID: 327114829750041139}
-  health: {fileID: 7431369331794040833}
+  health: {fileID: 2773954721542708094}
   attack: {fileID: 8684015620939576424}
   yeller: {fileID: 2369647675333205811}
   pre: {fileID: 8528185905985868512}
@@ -955,5 +954,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbersprite1: {fileID: 707820144838694392}
   numbersprite2: {fileID: 2279635411546243956}
-  currentSize: {fileID: 0}
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}

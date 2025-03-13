@@ -50,6 +50,6 @@ public class maingameplayScript : MonoBehaviour
 
     public void numberChange()
     {
-        selectedCard.GetComponent<sleepdeprivation>().attack.GetComponent<numbers>().numberRun(77);
+        selectedCard.GetComponent<sleepdeprivation>().attack.GetComponent<numbers>().numberRun(11);
     }
 }
