@@ -26,7 +26,6 @@ public class sleepdeprivation : MonoBehaviour
         attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
         health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
         Strt.handCurrent++;
-        
     }
 
     // Update is called once per frame
