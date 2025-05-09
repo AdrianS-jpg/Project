@@ -23,8 +23,13 @@ public class sleepdeprivation : MonoBehaviour
         Strt.deck.Remove(cardType);
         Strt.hand.Add(cardType);
         card.sprite = cardData.spriteList[cardType];
-        attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
-        health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
+        if (cardData.attackList[cardType] < 10) {
+            attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
+        } else
+        {
+            attack.GetComponent<numbers>().numberRun(cardData.attackList[cardType]);
+        }
+            health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
         Strt.handCurrent++;
     }
 
