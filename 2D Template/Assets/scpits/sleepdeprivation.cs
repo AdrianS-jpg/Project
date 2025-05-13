@@ -17,19 +17,14 @@ public class sleepdeprivation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         transform = gameObject.GetComponent<Transform>();
         cardType = Strt.deck[Random.Range(0, Strt.deck.Count - 1)];
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         Strt.deck.Remove(cardType);
         Strt.hand.Add(cardType);
         card.sprite = cardData.spriteList[cardType];
-        if (cardData.attackList[cardType] < 10) {
-            attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
-        } else
-        {
-            attack.GetComponent<numbers>().numberRun(cardData.attackList[cardType]);
-        }
-            health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
+        attackNHealthChnage();
         Strt.handCurrent++;
     }
 
@@ -52,7 +47,7 @@ public class sleepdeprivation : MonoBehaviour
 
     public void mainCard()
     {
-        cardData.mainCard = gameObject;
+        maingameplayScript.mainCard = gameObject;
         
         transform.position = new Vector3(0,0,0);
     }
@@ -60,14 +55,16 @@ public class sleepdeprivation : MonoBehaviour
     {
         if (cardType == 0)
         {
-
+            int att = maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardType];
+            maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardType] = att + ((att - (att%4)) / 4);
         }
+        maingameplayScript.mainCard.GetComponent<sleepdeprivation>().attackNHealthChnage();
         Destroy(gameObject);
     }
 
     private void OnMouseDown()
     {
-        if (cardData.mainCard != gameObject)
+        if (maingameplayScript.mainCard != gameObject)
         {
 
             if (maingameplayScript.selectedCard == gameObject)
@@ -101,5 +98,32 @@ public class sleepdeprivation : MonoBehaviour
     public void changeSprite(GameObject g, Sprite s)
     {
 
+    }
+    //i didnt misspell change i would never
+    public void attackNHealthChnage()
+    {
+        if (cardData.attackList[cardType] < 10)
+        {
+            attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
+            attack.GetComponent<numbers>().two = false;
+        }
+        else
+        {
+            
+            attack.GetComponent<numbers>().numberRun(cardData.attackList[cardType]);
+            attack.GetComponent<numbers>().two = true;
+
+        }
+        if (cardData.healthList[cardType] < 10)
+        {
+            health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
+            health.GetComponent<numbers>().two = false;
+        }
+        else
+        {
+            
+            health.GetComponent<numbers>().numberRun(cardData.healthList[cardType]);
+            health.GetComponent<numbers>().two = true;
+        }
     }
 }

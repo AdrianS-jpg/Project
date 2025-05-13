@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 8547073815494441747}
   - component: {fileID: 8792572259995244921}
   - component: {fileID: -7611592007795514722}
-  - component: {fileID: -6420993656208745739}
+  - component: {fileID: 5083576012242617509}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -886,7 +886,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.247519, y: 2.5938475}
   m_EdgeRadius: 0
---- !u!114 &-6420993656208745739
+--- !u!114 &5083576012242617509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -901,7 +901,7 @@ MonoBehaviour:
   cardType: 0
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
   transform: {fileID: 8547073815494441747}
-  card: {fileID: 327114829750041139}
+  card: {fileID: 8792572259995244921}
   health: {fileID: 2773954721542708094}
   attack: {fileID: 8684015620939576424}
   yeller: {fileID: 2369647675333205811}

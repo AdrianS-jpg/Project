@@ -9,6 +9,7 @@ public class maingameplayScript : MonoBehaviour
     public static List<int> hand = Strt.hand;
     public static List<int> cards = Strt.cards;
     public static GameObject selectedCard;
+    public static GameObject mainCard;
     public Transform transform;
     public GameObject Canvas;
     public GameObject prefab;
@@ -51,5 +52,10 @@ public class maingameplayScript : MonoBehaviour
     public void numberChange()
     {
         selectedCard.GetComponent<sleepdeprivation>().attack.GetComponent<numbers>().numberRun(11);
+    }
+
+    public void swapturn()
+    {
+        
     }
 }

@@ -9,5 +9,8 @@ public class cardData : ScriptableObject
     public List<int> healthList = new List<int>();
     public List<int> attackList = new List<int>();
     public List<Sprite> numberList = new List<Sprite>();
+    public Sprite evilman;
+    public int evilHealth;
+    public int evilAttack;
     public GameObject mainCard;
 }
