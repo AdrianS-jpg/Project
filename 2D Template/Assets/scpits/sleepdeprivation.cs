@@ -5,6 +5,8 @@ public class sleepdeprivation : MonoBehaviour
 {
     public int cardType;
     public cardData cardData;
+    public int cardDesign;
+    public int cardNum;
     public Transform transform;
     public SpriteRenderer card;
     public GameObject health;
@@ -19,11 +21,18 @@ public class sleepdeprivation : MonoBehaviour
     {
         
         transform = gameObject.GetComponent<Transform>();
-        cardType = Strt.deck[Random.Range(0, Strt.deck.Count - 1)];
+        cardType = Random.Range(0, Strt.deck.Count);
+        cardNum = Strt.cards[cardType];
+        cardDesign = Strt.deck[cardType];
+        Debug.Log(Strt.deck.Count - 1);
+        Debug.Log(cardType);
+        Debug.Log(cardNum);
+        Debug.Log(cardDesign);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
-        Strt.deck.Remove(cardType);
+        Strt.deck.RemoveAt(cardType);
+        Strt.cards.RemoveAt(cardType);
         Strt.hand.Add(cardType);
-        card.sprite = cardData.spriteList[cardType];
+        card.sprite = cardData.spriteList[cardDesign];
         attackNHealthChnage();
         Strt.handCurrent++;
     }
@@ -77,6 +86,8 @@ public class sleepdeprivation : MonoBehaviour
             }
 
             Debug.Log(cardType);
+            Debug.Log(cardNum);
+            Debug.Log(cardDesign);
         }
     }
 
@@ -102,27 +113,27 @@ public class sleepdeprivation : MonoBehaviour
     //i didnt misspell change i would never
     public void attackNHealthChnage()
     {
-        if (cardData.attackList[cardType] < 10)
+        if (cardData.attackList[cardNum] < 10)
         {
-            attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardType]];
+            attack.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.attackList[cardNum]];
             attack.GetComponent<numbers>().two = false;
         }
         else
         {
             
-            attack.GetComponent<numbers>().numberRun(cardData.attackList[cardType]);
+            attack.GetComponent<numbers>().numberRun(cardData.attackList[cardNum]);
             attack.GetComponent<numbers>().two = true;
 
         }
-        if (cardData.healthList[cardType] < 10)
+        if (cardData.healthList[cardNum] < 10)
         {
-            health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardType]];
+            health.GetComponent<numbers>().numbersprite1.GetComponent<SpriteRenderer>().sprite = cardData.numberList[cardData.healthList[cardNum]];
             health.GetComponent<numbers>().two = false;
         }
         else
         {
             
-            health.GetComponent<numbers>().numberRun(cardData.healthList[cardType]);
+            health.GetComponent<numbers>().numberRun(cardData.healthList[cardNum]);
             health.GetComponent<numbers>().two = true;
         }
     }
