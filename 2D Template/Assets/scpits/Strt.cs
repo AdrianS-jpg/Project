@@ -20,7 +20,7 @@ public class Strt : MonoBehaviour
     //u = upgrade (other upgrades) (upgrade hand cards)
     //e = encounter
     [System.NonSerialized]
-    public static List<int> deck = new List<int>() {0, 1, 2, 3, 4,0};
+    public static List<int> deck = new List<int>() {0, 1, 2, 3, 2,0};
     [System.NonSerialized]
     public static List<int> hand = new List<int> {};
     [System.NonSerialized]
