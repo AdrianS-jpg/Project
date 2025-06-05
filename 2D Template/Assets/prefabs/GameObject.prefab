@@ -397,6 +397,7 @@ MonoBehaviour:
   numbersprite1: {fileID: 283693942272280705}
   numbersprite2: {fileID: 443882150769434777}
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
+  two: 0
 --- !u!1 &3537926343024735466
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 110063094613122208, guid: b45db98a8a0e69c42b3f02bed3037c56, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -900,12 +901,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 0
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
+  cardDesign: 0
+  cardNum: 0
   transform: {fileID: 8547073815494441747}
   card: {fileID: 8792572259995244921}
   health: {fileID: 2773954721542708094}
   attack: {fileID: 8684015620939576424}
   yeller: {fileID: 2369647675333205811}
   pre: {fileID: 8528185905985868512}
+  lunchCounter: 4
 --- !u!1 &8684015620939576424
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,3 +959,4 @@ MonoBehaviour:
   numbersprite1: {fileID: 707820144838694392}
   numbersprite2: {fileID: 2279635411546243956}
   cardData: {fileID: 11400000, guid: 4ab2918f99e9d6445be403a5ee9e7c9c, type: 2}
+  two: 0

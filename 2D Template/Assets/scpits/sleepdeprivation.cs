@@ -13,6 +13,7 @@ public class sleepdeprivation : MonoBehaviour
     public GameObject attack;
     public SpriteRenderer yeller;
     public SpriteRenderer pre;
+    public int lunchCounter = 4;
     //public GameObject gameObject;
     //yo past adrian you stupid
 
@@ -24,10 +25,6 @@ public class sleepdeprivation : MonoBehaviour
         cardType = Random.Range(0, Strt.deck.Count);
         cardNum = Strt.cards[cardType];
         cardDesign = Strt.deck[cardType];
-        Debug.Log(Strt.deck.Count - 1);
-        Debug.Log(cardType);
-        Debug.Log(cardNum);
-        Debug.Log(cardDesign);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         Strt.deck.RemoveAt(cardType);
         Strt.cards.RemoveAt(cardType);
@@ -35,6 +32,15 @@ public class sleepdeprivation : MonoBehaviour
         card.sprite = cardData.spriteList[cardDesign];
         attackNHealthChnage();
         Strt.handCurrent++;
+        if (cardDesign == 1)
+        {
+            lunchCounter = 4;
+        }
+        else
+        {
+            lunchCounter = 0;
+        }
+        Debug.Log(lunchCounter);
     }
 
     // Update is called once per frame
@@ -62,12 +68,23 @@ public class sleepdeprivation : MonoBehaviour
     }
     public void play()
     {
-        if (cardType == 0)
+        if (cardDesign == 0)
         {
-            int att = maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardType];
-            maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardType] = att + ((att - (att%4)) / 4);
+            int att = maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardNum];
+            maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardNum] = att + ((att - (att % 4)) / 4);
+            Debug.Log("sadasdasd");
         }
-        maingameplayScript.mainCard.GetComponent<sleepdeprivation>().attackNHealthChnage();
+        else if (cardDesign == 1) {
+            cardData.attackList[maingameplayScript.mainCard.GetComponent<sleepdeprivation>().cardNum] *= lunchCounter;
+            if (lunchCounter == 1)
+            {
+                lunchCounter = 4;
+            } else
+            {
+                lunchCounter--;
+            }
+        }
+            maingameplayScript.mainCard.GetComponent<sleepdeprivation>().attackNHealthChnage();
         Destroy(gameObject);
     }
 

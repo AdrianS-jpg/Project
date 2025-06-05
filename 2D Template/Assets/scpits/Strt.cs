@@ -25,7 +25,7 @@ public class Strt : MonoBehaviour
     public static List<int> hand = new List<int> {};
     [System.NonSerialized]
     public static List<int> cards = new List<int>() {0, 1, 2, 3, 4,5};
-    public static int handSize = 5;
+    public static int handSize = 3;
     public static int handCurrent = 0;
     public static List<string> options = new List<string>();
     public static int numberinList = 0;
