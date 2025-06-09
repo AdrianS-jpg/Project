@@ -13,6 +13,9 @@ public class sleepdeprivation : MonoBehaviour
     public GameObject attack;
     public SpriteRenderer yeller;
     public SpriteRenderer pre;
+    public GameObject explain;
+    public GameObject textExplain1;
+    public GameObject textExplain2;
     public int lunchCounter = 4;
     //public GameObject gameObject;
     //yo past adrian you stupid
@@ -96,6 +99,9 @@ public class sleepdeprivation : MonoBehaviour
             if (maingameplayScript.selectedCard == gameObject)
             {
                 maingameplayScript.selectedCard = null;
+                explain.SetActive(false);
+                textExplain1.SetActive(false);
+                textExplain2.SetActive(false);
             }
             else
             {
@@ -110,17 +116,31 @@ public class sleepdeprivation : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (cardData.mainCard != gameObject)
+        if (maingameplayScript.mainCard != gameObject)
         {
-            pre.enabled = true;
+            if (maingameplayScript.selectedCard != gameObject)
+            {
+                pre.enabled = true;
+                explain.SetActive(true);
+                textExplain1.SetActive(true);
+                textExplain2.SetActive(true);
+            }
         }
     }
     private void OnMouseExit()
     {
-        if (cardData.mainCard != gameObject)
+        if (maingameplayScript.mainCard != gameObject)
         {
-            pre.enabled = false;
+            if (maingameplayScript.selectedCard != gameObject)
+            {
+                pre.enabled = false;
+                explain.SetActive(false);
+                textExplain1.SetActive(false);
+                textExplain2.SetActive(false);
+
+            }
         }
+
     }
 
     public void changeSprite(GameObject g, Sprite s)
