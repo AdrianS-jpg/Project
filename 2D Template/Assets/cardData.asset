@@ -37,6 +37,6 @@ MonoBehaviour:
   - {fileID: -8633372655157745005, guid: 78df4a56c1e78b045ad509240354ea26, type: 3}
   - {fileID: 63217326183190748, guid: 4b174b308321f494ea8d07c0023e4a94, type: 3}
   evilman: {fileID: 4398771313268058499, guid: 72a1c45571860834894fafb84b74576f, type: 3}
-  evilHealth: 4
+  evilHealth: 99
   evilAttack: 3
   mainCard: {fileID: 0}

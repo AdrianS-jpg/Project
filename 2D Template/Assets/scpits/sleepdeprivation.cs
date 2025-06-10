@@ -89,6 +89,7 @@ public class sleepdeprivation : MonoBehaviour
         }
             maingameplayScript.mainCard.GetComponent<sleepdeprivation>().attackNHealthChnage();
         Destroy(gameObject);
+        FindAnyObjectByType<maingameplayScript>().attackTurn();
     }
 
     private void OnMouseDown()

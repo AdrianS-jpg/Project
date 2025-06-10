@@ -14,6 +14,7 @@ public class maingameplayScript : MonoBehaviour
     public GameObject Canvas;
     public GameObject prefab;
     public cardData cardData;
+    public GameObject enemyGuy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,12 +50,37 @@ public class maingameplayScript : MonoBehaviour
         }
     }
 
+    public void attackTurn()
+    {
+
+        cardData.evilHealth = cardData.evilHealth - cardData.attackList[mainCard.GetComponent<sleepdeprivation>().cardNum];
+        if (cardData.evilHealth > 0)
+        {
+            cardData.healthList[mainCard.GetComponent<sleepdeprivation>().cardNum] -= cardData.evilAttack;
+            if (cardData.attackList[mainCard.GetComponent<sleepdeprivation>().cardNum] >= 0)
+            {
+                //take a life
+                //kill card
+                    //if lives == 0
+                        //end game
+                    //else 
+                        //let player pick other card to main
+                        //move on (no redraw, player must play card in hand w/out redraw)
+            }
+        }
+        else
+        {
+            //win round
+            Debug.Log("you win");
+        }
+    }
+
     public void numberChange()
     {
         selectedCard.GetComponent<sleepdeprivation>().attack.GetComponent<numbers>().numberRun(11);
     }
 
-    public void swapturn()
+    public void winround()
     {
         
     }
